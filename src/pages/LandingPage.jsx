@@ -10,7 +10,11 @@ import Footer from '../components/home/Footer'
 
 const LandingPage = () => {
   return (
-    <>
+    <main className='max-w-screen overflow-hidden relative'>
+      <div>
+        <div className='purp--glow'></div>
+        <div className='green--glow'></div>
+      </div>
       {/* navbar */}
       <Navbar />
       {/* hero */}
@@ -23,7 +27,7 @@ const LandingPage = () => {
       <Contact />
       {/* footer */}
       <Footer />
-    </>
+    </main>
   )
 }
 

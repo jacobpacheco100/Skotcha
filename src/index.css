@@ -57,3 +57,31 @@ code {
 .input {
   @apply w-full p-2 bg-gray-2 rounded-md mt-1 mb-4;
 }
+
+/* color blurs */
+
+.purp--glow {
+  position: absolute;
+  width: 472px;
+  height: 311px;
+  left: -284px;
+  top: 53px;
+  z-index: -1;
+  background: #5d39c1;
+  filter: blur(200px);
+
+  @apply lg:w-[500px] lg:h-[400px];
+}
+
+.green--glow {
+  position: absolute;
+  width: 472px;
+  height: 311px;
+  right: -300px;
+  top: 298px;
+  z-index: -1;
+  background: #39c180;
+  filter: blur(200px);
+
+  @apply lg:w-[500px] lg:h-[400px];
+}
