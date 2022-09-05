@@ -5,9 +5,31 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #18171b;
+  color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  @apply max-w-[1065px] mx-auto px-[20px] w-full;
+}
+
+.logo {
+  @apply font-black text-white text-[25px] uppercase;
+}
+
+.button-1 {
+  @apply py-[10px] px-[22px] rounded-md;
+}
+
+.h1 {
+  @apply font-bold text-[2.5rem] sm:text-[3rem] leading-[1.25em];
 }
