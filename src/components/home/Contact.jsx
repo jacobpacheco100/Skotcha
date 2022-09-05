@@ -3,7 +3,7 @@ import { TbSend } from 'react-icons/tb'
 
 const Contact = () => {
   return (
-    <section className='container mt-48 mb-32'>
+    <section className='container mt-48'>
       <div className='text-center'>
         <h3 className='h3'>Questions?</h3>
         <h2 className='h2'>We’re Always Available!</h2>

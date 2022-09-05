@@ -6,6 +6,7 @@ import Hero from '../components/home/Hero'
 import About from '../components/home/About'
 import How from '../components/home/How'
 import Contact from '../components/home/Contact'
+import Footer from '../components/home/Footer'
 
 const LandingPage = () => {
   return (
@@ -20,6 +21,8 @@ const LandingPage = () => {
       <How />
       {/* contact */}
       <Contact />
+      {/* footer */}
+      <Footer />
     </>
   )
 }
