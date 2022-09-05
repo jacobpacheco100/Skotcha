@@ -23,7 +23,7 @@ const Contact = () => {
           Message
         </label>
         <textarea id='message' className='input h-28'></textarea>
-        <button className='flex items-center justify-center button-1 bg-primary w-full'>
+        <button className='flex items-center justify-center btn-2 w-full'>
           Send <TbSend className='ml-2' />
         </button>
       </form>

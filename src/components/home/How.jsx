@@ -26,14 +26,14 @@ const How = () => {
       </div>
       {/* steps */}
       <section className='container mt-20 lg:mt-32 mb-52 flex flex-col lg:flex-row items-center justify-center space-y-8 lg:space-y-0 lg:space-x-5'>
-        <span className='button-1 bg-gray-2 lg:w-auto'>Create Board</span>
-        <span className='button-1 bg-gray-2 lg:w-auto'>+ Add Task</span>
-        <span className='button-1 bg-gray-2 lg:w-auto'>Mark Complete</span>
-        <span className='button-1 bg-gray-2 lg:w-auto'>- Clear Board</span>
+        <span className='btn-1 lg:w-auto'>Create Board</span>
+        <span className='btn-1 lg:w-auto'>+ Add Task</span>
+        <span className='btn-1 lg:w-auto'>Mark Complete</span>
+        <span className='btn-1 lg:w-auto'>- Clear Board</span>
       </section>
       {/* no user login */}
       <section className='container text-center'>
-        <div className='text-6xl text-primary p-10 bg-gray-1 inline-block rounded-full mb-10'>
+        <div className='text-6xl text-primary p-10 bg-gray-1 inline-block rounded-full'>
           <MdPersonOff />
         </div>
         <h3 className='h3'>Quick and Easy</h3>

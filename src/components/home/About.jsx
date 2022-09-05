@@ -13,7 +13,7 @@ const About = () => {
           Skotcha you can effortlessy and efficiently manage a complex array of
           tasks and organize your work.
         </p>
-        <button className='button-1 bg-gray-1'>Learn More</button>
+        <button className='btn-1 '>Learn More</button>
       </article>
     </div>
   )

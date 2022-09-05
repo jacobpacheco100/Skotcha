@@ -6,7 +6,7 @@ const Hero = () => {
       <h1 className='h1 max-w-[615px] mx-auto'>
         Manage a complex array of tasks, one at a time.
       </h1>
-      <button className='button-1 bg-primary'>Start Tasking!</button>
+      <button className='btn-2'>Start Tasking!</button>
     </div>
   )
 }

@@ -14,7 +14,7 @@ const Navbar = () => {
           <a href='#'>How it Works</a>
           <a href='#'>About</a>
           <a href='#'>Contact</a>
-          <button className='button-1 bg-gray-1'>My Tasks</button>
+          <button className='btn-1 bg-gray-1'>My Tasks</button>
         </div>
         <HiMenuAlt3
           className='text-4xl md:hidden z-30'
@@ -33,9 +33,7 @@ const Navbar = () => {
           <a href='#'>About</a>
           <a href='#'>Contact</a>
           <span></span>
-          <button className='button-1 bg-primary font-medium text-lg'>
-            My Tasks
-          </button>
+          <button className='btn-2 font-medium text-lg'>My Tasks</button>
         </div>
       </div>
 
