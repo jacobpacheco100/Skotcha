@@ -45,3 +45,11 @@ code {
 .text {
   @apply font-medium leading-7 text-gray-3 py-8;
 }
+
+.label {
+  @apply font-medium text-sm text-gray-3 text-[15px];
+}
+
+.input {
+  @apply w-full p-2 bg-gray-2 rounded-md mt-1 mb-4;
+}
