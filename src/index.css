@@ -27,9 +27,21 @@ code {
 }
 
 .button-1 {
-  @apply py-[10px] px-[22px] rounded-md;
+  @apply py-[10px] px-[22px] rounded-md font-bold;
 }
 
 .h1 {
   @apply font-bold text-[2.5rem] sm:text-[3rem] leading-[1.25em];
+}
+
+.h2 {
+  @apply font-bold text-[2rem] leading-[1.25em];
+}
+
+.h3 {
+  @apply font-black text-[1rem] text-primary;
+}
+
+.text {
+  @apply font-medium leading-7 text-gray-3 py-8;
 }
