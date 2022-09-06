@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { HiMenuAlt3 } from 'react-icons/hi'
+import { Link } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({ about, how, contact }) => {
   const [isMenu, setIsMenu] = useState(false)
 
   return (
@@ -11,10 +12,18 @@ const Navbar = () => {
         <h1 className='logo'>skotcha</h1>
         {/* nav links */}
         <div className=' hidden md:block font-medium space-x-7'>
-          <a href='#'>How it Works</a>
-          <a href='#'>About</a>
-          <a href='#'>Contact</a>
-          <button className='btn-1 bg-gray-1'>My Tasks</button>
+          <a className='nav--link' onClick={about}>
+            About
+          </a>
+          <a className='nav--link' onClick={how}>
+            How it Works
+          </a>
+          <a className='nav--link' onClick={contact}>
+            Contact
+          </a>
+          <Link to='/dashboard' className='btn-1 bg-gray-1'>
+            My Tasks
+          </Link>
         </div>
         <HiMenuAlt3
           className='text-4xl md:hidden z-30'
@@ -33,7 +42,9 @@ const Navbar = () => {
           <a href='#'>About</a>
           <a href='#'>Contact</a>
           <span></span>
-          <button className='btn-2 font-medium text-lg'>My Tasks</button>
+          <Link to='/dashboard' className='btn-2 font-medium text-lg'>
+            My Tasks
+          </Link>
         </div>
       </div>
 

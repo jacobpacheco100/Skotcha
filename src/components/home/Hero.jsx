@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
@@ -6,7 +7,9 @@ const Hero = () => {
       <h1 className='h1 max-w-[615px] mx-auto'>
         Manage a complex array of tasks, one at a time.
       </h1>
-      <button className='btn-2'>Start Tasking!</button>
+      <Link to='/dashboard' className='btn-2 inline-block'>
+        Start Tasking!
+      </Link>
     </div>
   )
 }

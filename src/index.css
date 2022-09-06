@@ -50,6 +50,10 @@ code {
   @apply font-medium leading-7 text-gray-3 py-8;
 }
 
+.nav--link {
+  @apply border-primary pb-0 ease-in duration-200 hover:cursor-pointer hover:border-b-2 hover:pb-2;
+}
+
 .label {
   @apply font-medium text-sm text-gray-3 text-[15px];
 }
