@@ -36,7 +36,7 @@ const How = () => {
         <div className='text-6xl text-primary p-10 bg-gray-1 inline-block rounded-full'>
           <MdPersonOff />
         </div>
-        <h3 className='h3'>Quick and Easy</h3>
+        <h3 className='h3 mt-10'>Quick and Easy</h3>
         <h2 className='h2'>No Need To Sign Up</h2>
         <p className='text max-w-[492px] mx-auto'>
           Simplicity is Skotchas main priority, So theres no need to sign up,

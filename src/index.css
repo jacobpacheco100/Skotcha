@@ -51,7 +51,7 @@ code {
 }
 
 .nav--link {
-  @apply border-primary pb-0 ease-in duration-200 hover:cursor-pointer hover:border-b-2 hover:pb-2;
+  @apply border-dark  pb-0 ease-in duration-200 border-b-2 hover:cursor-pointer hover:pb-2 hover:border-primary;
 }
 
 .label {
@@ -59,7 +59,7 @@ code {
 }
 
 .input {
-  @apply w-full p-2 bg-gray-2 rounded-md mt-1 mb-4;
+  @apply w-full p-2 bg-gray-2 rounded-md mt-1 mb-4 text-gray-3 focus:outline-none focus:border-2 border-gray-3;
 }
 
 /* color blurs */

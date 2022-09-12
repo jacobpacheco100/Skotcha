@@ -26,7 +26,7 @@ const Navbar = ({ about, how, contact }) => {
           </Link>
         </div>
         <HiMenuAlt3
-          className='text-4xl md:hidden z-30'
+          className={`text-4xl md:hidden z-30 ${isMenu && 'fixed right-5'}`}
           onClick={() => setIsMenu((prev) => !prev)}
         />
       </div>
@@ -38,9 +38,15 @@ const Navbar = ({ about, how, contact }) => {
         }`}
       >
         <div className='flex flex-col items-center justify-between space-y-9 px-10 mt-28 text-xl font-bold'>
-          <a href='#'>How it Works</a>
-          <a href='#'>About</a>
-          <a href='#'>Contact</a>
+          <a href='#' onClick={about}>
+            About
+          </a>
+          <a href='#' onClick={how}>
+            How it Works
+          </a>
+          <a href='#' onClick={contact}>
+            Contact
+          </a>
           <span></span>
           <Link to='/dashboard' className='btn-2 font-medium text-lg'>
             My Tasks
@@ -49,7 +55,7 @@ const Navbar = ({ about, how, contact }) => {
       </div>
 
       {isMenu && (
-        <div className='w-screen h-screen bg-dark opacity-70 z-10 fixed'></div>
+        <div className='w-screen h-screen bg-dark opacity-70 top-0 z-10 fixed'></div>
       )}
     </>
   )
