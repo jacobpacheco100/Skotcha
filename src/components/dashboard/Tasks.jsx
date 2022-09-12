@@ -25,7 +25,7 @@ const Tasks = () => {
   console.log(active[0])
 
   // does not work ???( below )
-  console.log(active[0].tasks)
+  // console.log(active[0].tasks)
 
   return (
     <div className='tasks--container  flex'>
