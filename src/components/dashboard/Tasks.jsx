@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { Context } from './context/Context'
 
 const Tasks = () => {
+  const { activeBoard, taskBoards } = useContext(Context)
+
+  const active = taskBoards.filter((board) => board.id === activeBoard)
+  console.log(active)
+  // return [{ object in array }]
+
   return (
     <div className='tasks--container  flex'>
       {/* left : todo list */}
@@ -8,6 +15,9 @@ const Tasks = () => {
         <div className='flex items-center space-x-5'>
           <div className='dot bg-danger'></div>
           <h3 className='h4'>TO DO (0)</h3>
+
+          {/* map through board */}
+          <ul></ul>
         </div>
       </div>
 

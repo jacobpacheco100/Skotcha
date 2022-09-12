@@ -6,7 +6,7 @@ const SideBar = () => {
   const { setModal, taskBoards } = useContext(Context)
 
   const mapBoards = taskBoards.map((board) => {
-    return <BoardItem key={board.id} subject={board.subject} />
+    return <BoardItem key={board.id} id={board.id} subject={board.subject} />
   })
 
   return (

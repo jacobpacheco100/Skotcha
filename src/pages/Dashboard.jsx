@@ -25,15 +25,31 @@ const Dashboard = () => {
   }
 
   const [modal, setModal] = useState()
-  const [taskBoards, setTaskBoards] = useState([])
-
-  console.log(taskBoards)
+  const [taskBoards, setTaskBoards] = useState([
+    {
+      id: Math.random(),
+      subject: 'reading log',
+      tasks: {
+        task: 'read a book',
+        description: 'read 200 pages a day',
+      },
+    },
+  ])
+  const [activeBoard, setActiveBoard] = useState('')
 
   // const showModal = () => {}
   return (
     <main className='dashboard--container'>
       {/* context api */}
-      <Context.Provider value={{ setModal, taskBoards, setTaskBoards }}>
+      <Context.Provider
+        value={{
+          setModal,
+          taskBoards,
+          setTaskBoards,
+          activeBoard,
+          setActiveBoard,
+        }}
+      >
         <SideBar setModal={setModal} />
         <section className='workspace--container'>
           <TopBar />

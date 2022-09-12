@@ -150,7 +150,7 @@ code {
 }
 
 .taskBoardItem--active {
-  @apply py-[10px] px-[22px] rounded-md font-bold bg-secondary ease-in-out duration-200 hover:bg-gray-3 hover:cursor-pointer uppercase;
+  @apply py-[10px] px-[22px] rounded-md font-bold bg-secondary ease-in-out duration-200  hover:cursor-default uppercase;
 }
 
 /* minor classes */
