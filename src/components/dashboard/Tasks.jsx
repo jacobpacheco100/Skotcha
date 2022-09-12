@@ -5,8 +5,27 @@ const Tasks = () => {
   const { activeBoard, taskBoards } = useContext(Context)
 
   const active = taskBoards.filter((board) => board.id === activeBoard)
+  /* active returns : 
+  [
+    {
+      id: 0.619421836386278,
+      subject: 'reading log',
+      tasks: {
+        task: 'read a book',
+        description: 'read 200 pages a day',
+      },
+    },
+  ]
+  */
+
+  // works
   console.log(active)
-  // return [{ object in array }]
+
+  // works
+  console.log(active[0])
+
+  // does not work ???( below )
+  console.log(active[0].tasks)
 
   return (
     <div className='tasks--container  flex'>
