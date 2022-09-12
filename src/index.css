@@ -13,56 +13,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* color blurs */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.container {
-  @apply max-w-[1065px] mx-auto px-[20px] w-full;
-}
-
-.logo {
-  @apply font-black text-white text-[25px] uppercase;
-}
-
-.btn-1 {
-  @apply py-[10px] px-[22px] rounded-md font-bold bg-gray-1 ease-in-out duration-200 hover:bg-gray-2;
-}
-
-.btn-2 {
-  @apply py-[10px] px-[22px] rounded-md font-bold bg-primary ease-in-out duration-200 hover:bg-[#2fa36b];
-}
-
-.h1 {
-  @apply font-bold text-[2.5rem] sm:text-[3rem] leading-[1.25em];
-}
-
-.h2 {
-  @apply font-bold text-[2rem] leading-[1.25em];
-}
-
-.h3 {
-  @apply font-black text-[1rem] text-primary;
-}
-
-.text {
-  @apply font-medium leading-7 text-gray-3 py-8;
-}
-
-.nav--link {
-  @apply border-dark  pb-0 ease-in duration-200 border-b-2 hover:cursor-pointer hover:pb-2 hover:border-primary;
-}
-
-.label {
-  @apply font-medium text-sm text-gray-3 text-[15px];
-}
-
-.input {
-  @apply w-full p-2 bg-gray-2 rounded-md mt-1 mb-4 text-gray-3 focus:outline-none focus:border-2 border-gray-3;
-}
-
-/* color blurs */
 
 .purp--glow {
   position: absolute;
@@ -88,4 +43,120 @@ code {
   filter: blur(200px);
 
   @apply lg:w-[500px] lg:h-[400px];
+}
+
+.container {
+  @apply max-w-[1065px] mx-auto px-[20px] w-full;
+}
+
+.logo {
+  @apply font-black text-white text-[25px] uppercase;
+}
+
+.btn-1 {
+  @apply py-[10px] px-[22px] rounded-md font-bold bg-gray-1 ease-in-out duration-200 hover:bg-gray-2;
+}
+
+.btn-2 {
+  @apply py-[10px] px-[22px] rounded-md font-bold bg-primary ease-in-out duration-200 hover:bg-[#2fa36b];
+}
+
+.btn-danger {
+  @apply py-[10px] px-[22px] rounded-md font-bold bg-danger ease-in-out duration-200 hover:bg-[#2fa36b];
+}
+
+.btn-disabled {
+  @apply py-[7px] px-[22px] rounded-md font-bold bg-gray-2 text-gray-3 ease-in-out duration-200 hover:cursor-default;
+}
+
+.h1 {
+  @apply font-bold text-[2.5rem] sm:text-[3rem] leading-[1.25em];
+}
+
+.h2 {
+  @apply font-bold text-[2rem] leading-[1.25em];
+}
+
+.h3 {
+  @apply font-black text-[1rem] text-primary;
+}
+
+.h4 {
+  @apply font-bold text-[1rem] text-white;
+}
+
+.text {
+  @apply font-medium leading-7 text-gray-3 py-8;
+}
+
+.nav--link {
+  @apply border-dark  pb-0 ease-in duration-200 border-b-2 hover:cursor-pointer hover:pb-2 hover:border-primary;
+}
+
+.label {
+  @apply font-medium text-sm text-gray-3 text-[15px];
+}
+
+.input {
+  @apply w-full p-2 bg-gray-2 rounded-md mt-1 mb-4 text-gray-4 focus:outline-none focus:border border-gray-3;
+}
+
+/* dashboard */
+
+/* containers */
+
+.dashboard--container {
+  @apply w-screen h-screen flex;
+}
+
+.workspace--container {
+  @apply flex flex-col grow;
+}
+
+.sidebar--container {
+  @apply w-[317px] h-screen bg-gray-1 border-r-2 border-gray-2;
+}
+
+.topbar--container {
+  @apply w-full h-[65px] bg-gray-1 border-b-2 border-gray-2;
+}
+
+.tasks--container {
+  @apply h-full;
+}
+
+/* ( inside containers ) */
+
+.taskBoardsList--container {
+  @apply py-5 border-t-2 border-b-2 border-gray-2;
+}
+
+.empty-list {
+  @apply italic text-gray-3 font-medium;
+}
+
+.btn-add-board {
+  @apply py-[10px] px-[22px] rounded-md font-bold text-secondary border-2 border-secondary ease-in-out duration-200 hover:bg-secondary hover:text-white;
+}
+
+.completed--sidebar {
+  @apply w-[317px] h-full bg-gray-1 border-l-2 border-gray-2 p-14;
+}
+
+/* minor classes */
+.dot {
+  @apply w-2 h-2 rounded-full;
+}
+
+/* modals */
+.modal--bg {
+  @apply absolute w-screen h-screen bg-dark opacity-40;
+}
+
+.modal--core {
+  @apply z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-14 rounded-lg bg-gray-1 w-[646px];
+}
+
+.modal--core--delete {
+  @apply z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-14 rounded-lg bg-gray-1 w-[380px];
 }
