@@ -8,6 +8,9 @@ import AddBoard from '../components/dashboard/modals/AddBoard'
 import AddTask from '../components/dashboard/modals/AddTask'
 import DeleteBoard from '../components/dashboard/modals/DeleteBoard'
 
+// context api
+import { ModalContext } from '../components/dashboard/context/ModalContext'
+
 const Dashboard = () => {
   const [modal, setModal] = useState()
   console.log(modal)
@@ -36,7 +39,9 @@ const Dashboard = () => {
 
       {/* modals */}
 
-      {showModal()}
+      <ModalContext.Provider value={{ setModal }}>
+        {showModal()}
+      </ModalContext.Provider>
     </div>
   )
 }

@@ -157,6 +157,10 @@ code {
   @apply z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-14 rounded-lg bg-gray-1 w-[646px];
 }
 
+.modal--close {
+  @apply absolute top-8 right-8 text-2xl text-gray-4 hover:cursor-pointer;
+}
+
 .modal--core--delete {
   @apply z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-14 rounded-lg bg-gray-1 w-[380px];
 }
