@@ -128,7 +128,7 @@ code {
 /* ( inside containers ) */
 
 .taskBoardsList--container {
-  @apply py-5 border-t-2 border-b-2 border-gray-2;
+  @apply py-5 border-t-2 border-b-2 border-gray-2 space-y-5;
 }
 
 .empty-list {
@@ -141,6 +141,16 @@ code {
 
 .completed--sidebar {
   @apply w-[317px] h-full bg-gray-1 border-l-2 border-gray-2 p-14;
+}
+
+/* small component classes */
+
+.taskBoardItem {
+  @apply py-[10px] px-[22px] rounded-md font-bold bg-gray-2 ease-in-out duration-200 hover:bg-gray-3 hover:cursor-pointer uppercase;
+}
+
+.taskBoardItem--active {
+  @apply py-[10px] px-[22px] rounded-md font-bold bg-secondary ease-in-out duration-200 hover:bg-gray-3 hover:cursor-pointer uppercase;
 }
 
 /* minor classes */

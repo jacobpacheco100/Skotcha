@@ -9,7 +9,7 @@ import AddTask from '../components/dashboard/modals/AddTask'
 import DeleteBoard from '../components/dashboard/modals/DeleteBoard'
 
 // context api
-import { ModalContext } from '../components/dashboard/context/ModalContext'
+import { Context } from '../components/dashboard/context/Context'
 
 const Dashboard = () => {
   const showModal = () => {
@@ -25,26 +25,26 @@ const Dashboard = () => {
   }
 
   const [modal, setModal] = useState()
-  const [taskboards, setTaskBoards] = useState([])
+  const [taskBoards, setTaskBoards] = useState([])
 
-  console.log(taskboards)
+  console.log(taskBoards)
 
   // const showModal = () => {}
   return (
-    <div className='dashboard--container'>
-      <SideBar setModal={setModal} />
+    <main className='dashboard--container'>
+      {/* context api */}
+      <Context.Provider value={{ setModal, taskBoards, setTaskBoards }}>
+        <SideBar setModal={setModal} />
+        <section className='workspace--container'>
+          <TopBar />
+          <Tasks />
+        </section>
 
-      <div className='workspace--container'>
-        <TopBar />
-        <Tasks />
-      </div>
+        {/* modals */}
 
-      {/* modals */}
-
-      <ModalContext.Provider value={{ setModal, setTaskBoards }}>
         {showModal()}
-      </ModalContext.Provider>
-    </div>
+      </Context.Provider>
+    </main>
   )
 }
 

@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
-import { ModalContext } from '../context/ModalContext'
+import { Context } from '../context/Context'
 import { IoMdClose } from 'react-icons/io'
 
 const AddBoard = () => {
-  const { setModal, setTaskBoards } = useContext(ModalContext)
+  const { setModal, setTaskBoards } = useContext(Context)
 
   // watch input
   const [title, setTitle] = useState('')

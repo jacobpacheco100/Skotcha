@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import { ModalContext } from '../context/ModalContext'
+import { Context } from '../context/Context'
 import { IoMdClose } from 'react-icons/io'
 
 const DeleteBoard = () => {
-  const { setModal } = useContext(ModalContext)
+  const { setModal } = useContext(Context)
   return (
     <>
       <div className='modal--core--delete'>
