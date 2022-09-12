@@ -1,19 +1,35 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { ModalContext } from '../context/ModalContext'
 import { IoMdClose } from 'react-icons/io'
 
 const AddBoard = () => {
-  const { setModal } = useContext(ModalContext)
+  const { setModal, setTaskBoards } = useContext(ModalContext)
+
+  // watch input
+  const [title, setTitle] = useState('')
+
+  // on submit
+  const addBoard = (e) => {
+    e.preventDefault()
+    setTaskBoards((prev) => [
+      ...prev,
+      { id: Math.random(), subject: title, tasks: {} },
+    ])
+  }
 
   return (
     <>
       <div className='modal--core'>
         <IoMdClose onClick={() => setModal('')} className='modal--close' />
         <h4 className='h2'>+ New Task Board</h4>
-        <form className='mt-10 space-y-5'>
+        <form onSubmit={addBoard} className='mt-10 space-y-5'>
           <div>
             <label className='label'>Title</label>
-            <input className='input' type='text' />
+            <input
+              onChange={(e) => setTitle(e.target.value)}
+              className='input'
+              type='text'
+            />
           </div>
           <button className='btn-2 w-full'>+ Create Board</button>
         </form>

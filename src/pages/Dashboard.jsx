@@ -12,9 +12,6 @@ import DeleteBoard from '../components/dashboard/modals/DeleteBoard'
 import { ModalContext } from '../components/dashboard/context/ModalContext'
 
 const Dashboard = () => {
-  const [modal, setModal] = useState()
-  console.log(modal)
-
   const showModal = () => {
     if (modal === '+board') {
       return <AddBoard />
@@ -26,6 +23,11 @@ const Dashboard = () => {
       return null
     }
   }
+
+  const [modal, setModal] = useState()
+  const [taskboards, setTaskBoards] = useState([])
+
+  console.log(taskboards)
 
   // const showModal = () => {}
   return (
@@ -39,7 +41,7 @@ const Dashboard = () => {
 
       {/* modals */}
 
-      <ModalContext.Provider value={{ setModal }}>
+      <ModalContext.Provider value={{ setModal, setTaskBoards }}>
         {showModal()}
       </ModalContext.Provider>
     </div>
