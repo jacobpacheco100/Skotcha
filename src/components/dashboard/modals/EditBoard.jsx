@@ -6,18 +6,19 @@ const AddBoard = () => {
   const { setModal, taskBoards, setTaskBoards, activeBoard } =
     useContext(Context)
 
+  // grabs the active board data ( to add them to the replacement board / set input value to old name)
   const active = taskBoards.filter((board) => board.id === activeBoard)
   let activeBoardTasks
+  let activeBoardSubject
   if (activeBoard) {
     activeBoardTasks = active[0].tasks
+    activeBoardSubject = active[0].subject
   }
-
-  console.log(activeBoardTasks)
 
   // watch input
   const [title, setTitle] = useState('')
 
-  // on submit
+  // on submit ( replaces board )
   const editBoardName = (e) => {
     e.preventDefault()
     const filterOld = taskBoards.filter((board) => board.id !== activeBoard)

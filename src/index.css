@@ -106,7 +106,7 @@ code {
 }
 
 .input {
-  @apply w-full p-2 bg-gray-2 rounded-md mt-1 mb-4 text-gray-4 focus:outline-none focus:border border-gray-3;
+  @apply w-full p-2 bg-gray-2 rounded-md mt-1 mb-4 text-gray-4 font-medium focus:outline-none focus:border border-gray-3;
 }
 
 /* dashboard ===================================================================================================================== */
