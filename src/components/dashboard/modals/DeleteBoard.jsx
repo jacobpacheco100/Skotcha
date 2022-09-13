@@ -3,12 +3,15 @@ import { Context } from '../context/Context'
 import { IoMdClose } from 'react-icons/io'
 
 const DeleteBoard = () => {
-  const { setModal, taskBoards, setTaskBoards, activeBoard } =
+  const { setModal, taskBoards, setTaskBoards, setActiveBoard, activeBoard } =
     useContext(Context)
 
   const deleteBoard = () => {
     setTaskBoards(taskBoards.filter((board) => board.id !== activeBoard))
+    setActiveBoard('')
+    setModal('')
   }
+  console.log(taskBoards)
   return (
     <>
       <div className='modal--core--delete'>

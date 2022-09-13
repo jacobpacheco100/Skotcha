@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Context } from './context/Context'
 import { FiMoreHorizontal } from 'react-icons/fi'
 
@@ -13,6 +13,9 @@ const TopBar = () => {
     boardName = active[0].subject
   }
   const [isMore, setIsMore] = useState(false)
+  useEffect(() => {
+    setIsMore(false)
+  }, [activeBoard, taskBoards])
 
   return (
     <div className='topbar--container flex items-center justify-between px-5'>

@@ -13,8 +13,9 @@ const AddBoard = () => {
     e.preventDefault()
     setTaskBoards((prev) => [
       ...prev,
-      { id: Math.random(), subject: title, tasks: {} },
+      { id: Math.random(), subject: title, tasks: [] },
     ])
+    setModal('')
   }
 
   return (

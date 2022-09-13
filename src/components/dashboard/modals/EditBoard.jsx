@@ -20,10 +20,12 @@ const AddBoard = () => {
   // on submit
   const editBoardName = (e) => {
     e.preventDefault()
-    setTaskBoards((prev) => [
-      ...prev,
-      { id: activeBoard, subject: title, tasks: { activeBoardTasks } },
+    const filterOld = taskBoards.filter((board) => board.id !== activeBoard)
+    setTaskBoards([
+      ...filterOld,
+      { id: activeBoard, subject: title, tasks: activeBoardTasks },
     ])
+    setModal('')
   }
 
   return (
