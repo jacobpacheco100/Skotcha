@@ -6,13 +6,22 @@ const SideBar = () => {
   const { setModal, taskBoards } = useContext(Context)
 
   const mapBoards = taskBoards.map((board) => {
-    return <BoardItem key={board.id} id={board.id} subject={board.subject} />
+    return (
+      <BoardItem
+        key={board.id}
+        id={board.id}
+        subject={board.subject}
+        board={board}
+      />
+    )
   })
 
   return (
     <div className='sidebar--container p-4 space-y-8 flex flex-col'>
       <h1 className='logo'>skotcha</h1>
-      <h3 className='font-bold text-gray-4 '>Tasks Boards (0)</h3>
+      <h3 className='font-bold text-gray-4 '>
+        Tasks Boards ({taskBoards.length})
+      </h3>
 
       {/* task boards list */}
       <ul className='taskBoardsList--container'>

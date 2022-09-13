@@ -7,11 +7,13 @@ import Tasks from '../components/dashboard/Tasks'
 import AddBoard from '../components/dashboard/modals/AddBoard'
 import AddTask from '../components/dashboard/modals/AddTask'
 import DeleteBoard from '../components/dashboard/modals/DeleteBoard'
+import EditBoard from '../components/dashboard/modals/EditBoard'
 
 // context api
 import { Context } from '../components/dashboard/context/Context'
 
 const Dashboard = () => {
+  // on button clicks, modal will equal a string corosponding to that button ( + Add Board = +board)
   const showModal = () => {
     if (modal === '+board') {
       return <AddBoard />
@@ -19,12 +21,15 @@ const Dashboard = () => {
       return <AddTask />
     } else if (modal === '-board') {
       return <DeleteBoard />
+    } else if (modal === 'e-board') {
+      return <EditBoard />
     } else {
       return null
     }
   }
-
+  // handles which modal is displayed
   const [modal, setModal] = useState()
+  // state containing all boards and tasks within them
   const [taskBoards, setTaskBoards] = useState([
     {
       id: Math.random(),
@@ -59,9 +64,9 @@ const Dashboard = () => {
       ],
     },
   ])
+  // determines the currently clicked board
   const [activeBoard, setActiveBoard] = useState('')
 
-  // const showModal = () => {}
   return (
     <main className='dashboard--container'>
       {/* context api */}

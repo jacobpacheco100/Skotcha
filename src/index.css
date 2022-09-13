@@ -53,6 +53,8 @@ code {
   @apply font-black text-white text-[25px] uppercase;
 }
 
+/* buttons */
+
 .btn-1 {
   @apply py-[10px] px-[22px] rounded-md font-bold bg-gray-1 ease-in-out duration-200 hover:bg-gray-2;
 }
@@ -62,12 +64,18 @@ code {
 }
 
 .btn-danger {
-  @apply py-[10px] px-[22px] rounded-md font-bold bg-danger ease-in-out duration-200 hover:bg-[#2fa36b];
+  @apply py-[10px] px-[22px] rounded-md font-bold bg-danger ease-in-out duration-200 hover:bg-[#bd3333];
 }
 
 .btn-disabled {
   @apply py-[7px] px-[22px] rounded-md font-bold bg-gray-2 text-gray-3 ease-in-out duration-200 hover:cursor-default;
 }
+
+.btn-abled {
+  @apply py-[7px] px-[22px] rounded-md font-bold bg-secondary text-white ease-in-out duration-200 hover:bg-[#4a2d9c];
+}
+
+/* fonts */
 
 .h1 {
   @apply font-bold text-[2.5rem] sm:text-[3rem] leading-[1.25em];
@@ -101,9 +109,9 @@ code {
   @apply w-full p-2 bg-gray-2 rounded-md mt-1 mb-4 text-gray-4 focus:outline-none focus:border border-gray-3;
 }
 
-/* dashboard */
+/* dashboard ===================================================================================================================== */
 
-/* containers */
+/* containers ------------------------------------------------------------*/
 
 .dashboard--container {
   @apply w-screen h-screen flex;
@@ -125,40 +133,59 @@ code {
   @apply h-full;
 }
 
-/* ( inside containers ) */
+/* sidebar ( taskboards ) ------------------------------------------------------------*/
+
+.taskBoardItem {
+  @apply py-[10px] px-[22px] rounded-md font-bold bg-gray-2 ease-in-out duration-200 hover:bg-[#595661] hover:cursor-pointer uppercase;
+}
 
 .taskBoardsList--container {
   @apply py-5 border-t-2 border-b-2 border-gray-2 space-y-5;
-}
-
-.empty-list {
-  @apply italic text-gray-3 font-medium;
 }
 
 .btn-add-board {
   @apply py-[10px] px-[22px] rounded-md font-bold text-secondary border-2 border-secondary ease-in-out duration-200 hover:bg-secondary hover:text-white;
 }
 
-.completed--sidebar {
-  @apply w-[317px] h-full bg-gray-1 border-l-2 border-gray-2 p-14;
-}
-
-/* small component classes */
-
-.taskBoardItem {
-  @apply py-[10px] px-[22px] rounded-md font-bold bg-gray-2 ease-in-out duration-200 hover:bg-gray-3 hover:cursor-pointer uppercase;
-}
-
 .taskBoardItem--active {
   @apply py-[10px] px-[22px] rounded-md font-bold bg-secondary ease-in-out duration-200  hover:cursor-default uppercase;
 }
 
-/* minor classes */
+/* topbar ------------------------------------------------------------*/
+
+.board-name {
+  @apply font-bold text-[1rem] text-gray-4 uppercase;
+}
+
+/* tasks ------------------------------------------------------------*/
+
+.completed--sidebar {
+  @apply w-[317px] h-full bg-gray-1 border-l-2 border-gray-2 p-14;
+}
+
+/* minor classes -----------------------------------------------------*/
+
 .dot {
   @apply w-2 h-2 rounded-full;
 }
 
-/* modals */
+.empty-list {
+  @apply italic text-gray-3 font-medium;
+}
+
+.more {
+  @apply text-gray-4 text-2xl hover:cursor-pointer hover:text-white;
+}
+
+.more--container {
+  @apply absolute top-8 right-0 flex flex-col items-end bg-gray-1 border border-gray-2 rounded-lg;
+}
+
+.more--option {
+  @apply border border-gray-2 w-full text-right px-6 py-2 font-medium flex items-center space-x-3 justify-end hover:cursor-pointer hover:bg-gray-2 ease-in-out duration-200;
+}
+
+/* modals ------------------------------------------------------------*/
 .modal--bg {
   @apply absolute w-screen h-screen bg-dark opacity-40;
 }

@@ -7,6 +7,7 @@ const BoardItem = ({ subject, id }) => {
   const activeHandler = () => {
     setActiveBoard(id)
   }
+
   return (
     <div
       onClick={activeHandler}

@@ -3,7 +3,12 @@ import { Context } from '../context/Context'
 import { IoMdClose } from 'react-icons/io'
 
 const DeleteBoard = () => {
-  const { setModal } = useContext(Context)
+  const { setModal, taskBoards, setTaskBoards, activeBoard } =
+    useContext(Context)
+
+  const deleteBoard = () => {
+    setTaskBoards(taskBoards.filter((board) => board.id !== activeBoard))
+  }
   return (
     <>
       <div className='modal--core--delete'>
@@ -12,7 +17,9 @@ const DeleteBoard = () => {
         <p className='text text-center'>
           You are about to remove this task board from your dashboard
         </p>
-        <button className='btn-danger w-full'>Delete Task Board</button>
+        <button onClick={deleteBoard} className='btn-danger w-full'>
+          Delete Task Board
+        </button>
       </div>
       <div onClick={() => setModal('')} className='modal--bg'></div>
     </>

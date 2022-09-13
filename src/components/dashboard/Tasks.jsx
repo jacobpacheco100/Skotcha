@@ -8,14 +8,12 @@ const Tasks = () => {
   const active = taskBoards.filter((board) => board.id === activeBoard)
 
   let taskList
-
   if (activeBoard) {
     taskList = active[0].tasks.map((task) => {
       return (
         <Task key={task.id} title={task.task} description={task.description} />
       )
     })
-    console.log(taskList)
   }
 
   return (
