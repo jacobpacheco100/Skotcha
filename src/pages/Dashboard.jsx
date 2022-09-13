@@ -29,10 +29,34 @@ const Dashboard = () => {
     {
       id: Math.random(),
       subject: 'reading log',
-      tasks: {
-        task: 'read a book',
-        description: 'read 200 pages a day',
-      },
+      tasks: [
+        {
+          task: 'read a book',
+          description: 'read 200 pages a day',
+          id: Math.random(),
+        },
+        {
+          task: 'exercise',
+          description: 'do 100 jumping jacks',
+          id: Math.random(),
+        },
+      ],
+    },
+    {
+      id: Math.random(),
+      subject: 'school work',
+      tasks: [
+        {
+          task: 'Finish Project',
+          description: 'Build powerpoint on solar system',
+          id: Math.random(),
+        },
+        {
+          task: 'Finish math homework',
+          description: 'kill myself',
+          id: Math.random(),
+        },
+      ],
     },
   ])
   const [activeBoard, setActiveBoard] = useState('')

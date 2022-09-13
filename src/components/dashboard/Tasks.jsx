@@ -1,31 +1,22 @@
 import React, { useContext, useState } from 'react'
 import { Context } from './context/Context'
+import Task from './smallComponents/Task'
 
 const Tasks = () => {
   const { activeBoard, taskBoards } = useContext(Context)
 
   const active = taskBoards.filter((board) => board.id === activeBoard)
-  /* active returns : 
-  [
-    {
-      id: 0.619421836386278,
-      subject: 'reading log',
-      tasks: {
-        task: 'read a book',
-        description: 'read 200 pages a day',
-      },
-    },
-  ]
-  */
 
-  // works
-  console.log(active)
+  let taskList
 
-  // works
-  console.log(active[0])
-
-  // does not work ???( below )
-  // console.log(active[0].tasks)
+  if (activeBoard) {
+    taskList = active[0].tasks.map((task) => {
+      return (
+        <Task key={task.id} title={task.task} description={task.description} />
+      )
+    })
+    console.log(taskList)
+  }
 
   return (
     <div className='tasks--container  flex'>
@@ -36,7 +27,7 @@ const Tasks = () => {
           <h3 className='h4'>TO DO (0)</h3>
 
           {/* map through board */}
-          <ul></ul>
+          <ul>{activeBoard && taskList}</ul>
         </div>
       </div>
 
