@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Context } from './context/Context'
-import Task from './smallComponents/Task'
+import TaskItem from './smallComponents/TaskItem'
 
 const Tasks = () => {
   const { activeBoard, taskBoards } = useContext(Context)
@@ -11,9 +11,10 @@ const Tasks = () => {
   if (activeBoard) {
     taskList = active[0].tasks.map((task) => {
       return (
-        <Task
-          key={task.id}
+        <TaskItem
           task={task}
+          key={task.id}
+          id={task.id}
           title={task.task}
           description={task.description}
           doing={task.doing}

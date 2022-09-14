@@ -4,9 +4,10 @@ import { FiMoreHorizontal } from 'react-icons/fi'
 
 import TaskMore from './TaskMore'
 
-const Task = ({ title, description }) => {
+const TaskItem = ({ task, id, title, description }) => {
+  const { activeBoard, taskBoards, setActiveTask, activeTask, setModal } =
+    useContext(Context)
   const [isMore, setIsMore] = useState(false)
-  const { activeBoard, taskBoards } = useContext(Context)
 
   useEffect(() => {
     setIsMore(false)
@@ -25,11 +26,11 @@ const Task = ({ title, description }) => {
             className='more'
             onClick={() => setIsMore((prev) => !prev)}
           />
-          {isMore && <TaskMore />}
+          {isMore && <TaskMore id={id} />}
         </div>
       </div>
     </div>
   )
 }
 
-export default Task
+export default TaskItem

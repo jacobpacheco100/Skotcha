@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+
+// main components
 import SideBar from '../components/dashboard/SideBar'
 import TopBar from '../components/dashboard/TopBar'
 import Tasks from '../components/dashboard/Tasks'
@@ -8,6 +10,7 @@ import AddBoard from '../components/dashboard/modals/AddBoard'
 import AddTask from '../components/dashboard/modals/AddTask'
 import DeleteBoard from '../components/dashboard/modals/DeleteBoard'
 import EditBoard from '../components/dashboard/modals/EditBoard'
+import EditTask from '../components/dashboard/modals/EditTask'
 
 // context api
 import { Context } from '../components/dashboard/context/Context'
@@ -23,6 +26,8 @@ const Dashboard = () => {
       return <DeleteBoard />
     } else if (modal === 'e-board') {
       return <EditBoard />
+    } else if (modal === 'e-task') {
+      return <EditTask />
     } else {
       return null
     }
@@ -81,6 +86,8 @@ const Dashboard = () => {
   ])
   // determines the currently clicked board
   const [activeBoard, setActiveBoard] = useState('')
+  // determines the task selected for editing
+  const [activeTask, setActiveTask] = useState('')
 
   return (
     <main className='dashboard--container'>
@@ -92,6 +99,8 @@ const Dashboard = () => {
           setTaskBoards,
           activeBoard,
           setActiveBoard,
+          activeTask,
+          setActiveTask,
         }}
       >
         <SideBar setModal={setModal} />

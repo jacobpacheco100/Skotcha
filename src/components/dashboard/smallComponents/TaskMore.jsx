@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { Context } from '../context/Context'
 import { BsFillExclamationCircleFill } from 'react-icons/bs'
 import { AiFillEdit } from 'react-icons/ai'
 import { FaTrash } from 'react-icons/fa'
 
-const TaskMore = () => {
+const TaskMore = ({ id }) => {
+  const { setModal, setActiveTask, activeTask } = useContext(Context)
+
+  const handleEdit = () => {
+    setModal('e-task')
+    setActiveTask(id)
+  }
+
   return (
     <div className='task-more--container'>
-      <div className='more--option'>
+      <div className='more--option' onClick={handleEdit}>
         <span>Edit</span>
         <AiFillEdit className='text-primary' />
       </div>

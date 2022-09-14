@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Context } from '../context/Context'
 import { IoMdClose } from 'react-icons/io'
 
-const AddBoard = () => {
+const EditBoard = () => {
   const { setModal, taskBoards, setTaskBoards, activeBoard } =
     useContext(Context)
 
@@ -51,4 +51,4 @@ const AddBoard = () => {
   )
 }
 
-export default AddBoard
+export default EditBoard
