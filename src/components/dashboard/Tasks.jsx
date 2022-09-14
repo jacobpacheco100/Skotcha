@@ -1,28 +1,44 @@
 import React, { useContext, useState } from 'react'
 import { Context } from './context/Context'
 import TaskItem from './smallComponents/TaskItem'
+import CompletedTask from './smallComponents/CompletedTask'
 
 const Tasks = () => {
   const { activeBoard, taskBoards } = useContext(Context)
 
-  const active = taskBoards.filter((board) => board.id === activeBoard)
+  const activeBoardItem = taskBoards.filter((board) => board.id === activeBoard)
 
+  // filter/map out tasks
   let taskList
   if (activeBoard) {
-    taskList = active[0].tasks.map((task) => {
-      return (
-        <TaskItem
-          task={task}
-          key={task.id}
-          id={task.id}
-          title={task.task}
-          description={task.description}
-          doing={task.doing}
-          completed={task.completed}
-        />
-      )
-    })
+    taskList = activeBoardItem[0].tasks
+      .filter((task) => !task.completed)
+      .map((task) => {
+        return (
+          <TaskItem
+            task={task}
+            key={task.id}
+            id={task.id}
+            title={task.task}
+            description={task.description}
+            doing={task.doing}
+            completed={task.completed}
+          />
+        )
+      })
   }
+
+  // filter/map out completed tasks
+  let completedTasks
+  if (activeBoard) {
+    completedTasks = activeBoardItem[0].tasks
+      .filter((task) => task.completed)
+      .map((task) => {
+        return <CompletedTask key={task.id} task={task} />
+      })
+  }
+
+  console.log(completedTasks)
 
   return (
     <div className='tasks--container  flex'>
@@ -39,11 +55,13 @@ const Tasks = () => {
       </div>
 
       {/* right : completed */}
-      <div className='completed--sidebar hidden'>
+      <div className='completed--sidebar '>
         <div className='flex items-center space-x-5'>
           <div className='dot bg-primary'></div>
           <h3 className='h4'>COMPLETED (0)</h3>
         </div>
+        {/* map through board */}
+        <div className=''>{activeBoard && completedTasks}</div>
       </div>
     </div>
   )

@@ -16,12 +16,10 @@ const EditTask = () => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
 
-  // grabs the active board data ( to add them to the replacement board && set input value to old name)
+  //   grabs the active board object
   const activeBoardItem = taskBoards.filter((board) => board.id === activeBoard)
-  const activeTaskObject = activeBoardItem[0].tasks.filter(
-    (task) => task.id === activeTask
-  )
 
+  //   variables based off the active board object (activeBoardItem)
   let activeBoardTasks
   let activeBoardSubject
   if (activeBoard) {
@@ -29,16 +27,15 @@ const EditTask = () => {
     activeBoardTasks = activeBoardItem[0].tasks
   }
 
+  //   filters boards and tasks no being edited
+  const filterOldBoards = taskBoards.filter((board) => board.id !== activeBoard)
   const filterOldTasks = activeBoardTasks.filter(
     (task) => task.id !== activeTask
   )
 
-  console.log(filterOldTasks)
-
-  // on submit ( replaces board )
-  const editBoardName = (e) => {
+  // on submit ( replaces active board / tasks in active board )
+  const editTask = (e) => {
     e.preventDefault()
-    const filterOld = taskBoards.filter((board) => board.id !== activeBoard)
     setTaskBoards([
       {
         id: activeBoard,
@@ -54,7 +51,7 @@ const EditTask = () => {
           ...filterOldTasks,
         ],
       },
-      ...filterOld,
+      ...filterOldBoards,
     ])
     setModal('')
   }
@@ -69,7 +66,7 @@ const EditTask = () => {
       <div className='modal--core'>
         <IoMdClose onClick={closeHandler} className='modal--close' />
         <h4 className='h2'>Edit Task</h4>
-        <form onSubmit={editBoardName} className='mt-10 space-y-5'>
+        <form onSubmit={editTask} className='mt-10 space-y-5'>
           <div>
             <label className='label'>Title</label>
             <input
@@ -79,7 +76,7 @@ const EditTask = () => {
             />
           </div>
           <div>
-            <label className='label'>Title</label>
+            <label className='label'>Description</label>
             <textarea
               onChange={(e) => setDescription(e.target.value)}
               className='input h-28'

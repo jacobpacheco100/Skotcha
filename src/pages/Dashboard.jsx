@@ -45,7 +45,7 @@ const Dashboard = () => {
           task: 'read a book',
           description: 'Create a project folder in the Developer directory ',
           doing: false,
-          completed: false,
+          completed: true,
         },
         {
           id: Math.random(),

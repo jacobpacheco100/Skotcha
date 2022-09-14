@@ -3,7 +3,7 @@ import { Context } from '../context/Context'
 import { IoMdClose } from 'react-icons/io'
 
 const AddTask = () => {
-  const { setModal, setTaskBoards, taskBoards, activeBoard } =
+  const { setModal, setTaskBoards, taskBoards, activeBoard, setIsMore } =
     useContext(Context)
 
   // watch input
@@ -30,7 +30,6 @@ const AddTask = () => {
         id: activeBoardID,
         subject: activeBoardSubject,
         tasks: [
-          ...activeBoardTasks,
           {
             id: Math.random(),
             task: title,
@@ -38,10 +37,12 @@ const AddTask = () => {
             doing: false,
             completed: false,
           },
+          ...activeBoardTasks,
         ],
       },
     ])
     setModal('')
+    setIsMore(false)
   }
   return (
     <>
