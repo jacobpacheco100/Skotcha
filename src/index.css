@@ -163,6 +163,28 @@ code {
   @apply w-[317px] h-full bg-gray-1 border-l-2 border-gray-2 p-14;
 }
 
+.task--grid {
+  @apply grid gap-5;
+}
+
+.task--item {
+  @apply p-6 bg-gray-1 my-5 w-[350px] rounded-lg flex justify-between;
+}
+
+.task--item-content {
+}
+
+.task--item-options {
+  @apply flex flex-col justify-between items-end;
+}
+
+.task--item-title {
+  @apply font-bold text-[1.4rem] text-white capitalize;
+}
+
+.task--item-description {
+  @apply font-medium leading-7 text-gray-3 pt-3;
+}
 /* minor classes -----------------------------------------------------*/
 
 .dot {
@@ -179,6 +201,10 @@ code {
 
 .more--container {
   @apply absolute top-8 right-0 flex flex-col items-end bg-gray-1 border border-gray-2 rounded-lg;
+}
+
+.task-more--container {
+  @apply absolute top-10 z-10 right-0 flex flex-col items-end bg-gray-1 border border-gray-2 rounded-lg;
 }
 
 .more--option {

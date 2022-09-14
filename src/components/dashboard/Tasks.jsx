@@ -11,7 +11,14 @@ const Tasks = () => {
   if (activeBoard) {
     taskList = active[0].tasks.map((task) => {
       return (
-        <Task key={task.id} title={task.task} description={task.description} />
+        <Task
+          key={task.id}
+          task={task}
+          title={task.task}
+          description={task.description}
+          doing={task.doing}
+          completed={task.completed}
+        />
       )
     })
   }
@@ -22,11 +29,12 @@ const Tasks = () => {
       <div className='grow p-14'>
         <div className='flex items-center space-x-5'>
           <div className='dot bg-danger'></div>
-          <h3 className='h4'>TO DO (0)</h3>
-
-          {/* map through board */}
-          <ul>{activeBoard && taskList}</ul>
+          <h3 className='h4'>
+            TO DO ( {activeBoard ? taskList.length : '0'} )
+          </h3>
         </div>
+        {/* map through board */}
+        <div className='tasks--grid'>{activeBoard && taskList}</div>
       </div>
 
       {/* right : completed */}

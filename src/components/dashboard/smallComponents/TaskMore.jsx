@@ -5,7 +5,7 @@ import { FaTrash } from 'react-icons/fa'
 
 const TaskMore = () => {
   return (
-    <div className='more--container'>
+    <div className='task-more--container'>
       <div className='more--option'>
         <span>Edit</span>
         <AiFillEdit className='text-primary' />

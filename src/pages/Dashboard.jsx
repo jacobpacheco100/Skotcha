@@ -36,14 +36,25 @@ const Dashboard = () => {
       subject: 'reading log',
       tasks: [
         {
-          task: 'read a book',
-          description: 'read 200 pages a day',
           id: Math.random(),
+          task: 'read a book',
+          description: 'Create a project folder in the Developer directory ',
+          doing: false,
+          completed: false,
         },
         {
+          id: Math.random(),
           task: 'exercise',
           description: 'do 100 jumping jacks',
+          doing: false,
+          completed: false,
+        },
+        {
           id: Math.random(),
+          task: 'exercise',
+          description: 'do 100 jumping jacks',
+          doing: false,
+          completed: false,
         },
       ],
     },
@@ -52,14 +63,18 @@ const Dashboard = () => {
       subject: 'school work',
       tasks: [
         {
+          id: Math.random(),
           task: 'Finish Project',
           description: 'Build powerpoint on solar system',
-          id: Math.random(),
+          doing: false,
+          completed: false,
         },
         {
+          id: Math.random(),
           task: 'Finish math homework',
           description: 'kill myself',
-          id: Math.random(),
+          doing: false,
+          completed: false,
         },
       ],
     },

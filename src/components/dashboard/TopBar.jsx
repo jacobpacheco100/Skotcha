@@ -5,13 +5,18 @@ import { FiMoreHorizontal } from 'react-icons/fi'
 import BoardMore from './smallComponents/BoardMore'
 
 const TopBar = () => {
-  const { activeBoard, taskBoards } = useContext(Context)
+  const { activeBoard, taskBoards, setModal } = useContext(Context)
 
+  // returns active board object (inside) array
   const active = taskBoards.filter((board) => board.id === activeBoard)
+
+  // return active board subject ( name )
   let boardName
   if (activeBoard) {
     boardName = active[0].subject
   }
+
+  // handles options popup
   const [isMore, setIsMore] = useState(false)
   useEffect(() => {
     setIsMore(false)
@@ -33,7 +38,10 @@ const TopBar = () => {
           <span className='empty-list'>no taskboards...</span>
         )}
       </div>
-      <button className={`${activeBoard ? 'btn-abled' : 'btn-disabled'}`}>
+      <button
+        className={`${activeBoard ? 'btn-abled' : 'btn-disabled'}`}
+        onClick={() => setModal('+task')}
+      >
         + Add New Task
       </button>
     </div>
