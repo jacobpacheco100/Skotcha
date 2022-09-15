@@ -38,26 +38,26 @@ const Dashboard = () => {
   const [taskBoards, setTaskBoards] = useState([
     {
       id: Math.random(),
-      subject: 'The Gym',
+      subject: 'Hit The Gym',
       tasks: [
         {
           id: Math.random(),
           task: 'Drink Preworkout',
-          description: 'Create a project folder in the Developer directory ',
+          description: '',
           doing: false,
           completed: false,
         },
         {
           id: Math.random(),
-          task: 'exercise',
-          description: 'do 100 jumping jacks',
+          task: 'Upper Body',
+          description: '100 pushups, 100 pullups, 100 dumbell curls',
           doing: false,
           completed: false,
         },
         {
           id: Math.random(),
-          task: 'train',
-          description: 'do 50 pushups',
+          task: 'Cardio',
+          description: 'Run an 8 mile hike',
           doing: false,
           completed: false,
         },
@@ -65,19 +65,19 @@ const Dashboard = () => {
     },
     {
       id: Math.random(),
-      subject: 'school work',
+      subject: 'college work',
       tasks: [
         {
           id: Math.random(),
-          task: 'Finish Project',
-          description: 'Build powerpoint on solar system',
+          task: 'Finish Chem Project',
+          description: 'Build powerpoint on chemicals',
           doing: false,
           completed: false,
         },
         {
           id: Math.random(),
-          task: 'Finish math homework',
-          description: 'kill myself',
+          task: 'Finish phycology notes',
+          description: '',
           doing: false,
           completed: false,
         },
