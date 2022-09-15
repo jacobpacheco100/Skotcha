@@ -43,14 +43,14 @@ const Tasks = () => {
   return (
     <div className='tasks--container  flex'>
       {/* left : todo list */}
-      <div className='grow p-14'>
+      <div className=' p-14'>
         <div className='flex items-center space-x-5'>
           <div className='dot bg-danger'></div>
           <h3 className='h4'>
             TO DO ( {activeBoard ? taskList.length : '0'} )
           </h3>
         </div>
-        {/* map through board */}
+        {/* map through tasks */}
         <div className='tasks--grid'>
           {activeBoard && taskList.length > 0 ? (
             taskList
@@ -69,7 +69,7 @@ const Tasks = () => {
               COMPLETED ( {activeBoard ? completedTasks.length : '0'} )
             </h3>
           </div>
-          {/* map through board */}
+          {/* map completed tasks board */}
           <div className=''>{activeBoard && completedTasks}</div>
         </div>
 

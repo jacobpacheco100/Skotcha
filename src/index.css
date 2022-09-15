@@ -130,7 +130,7 @@ code {
 }
 
 .tasks--container {
-  @apply h-full;
+  @apply h-full overflow-scroll pb-20;
 }
 
 /* sidebar ( taskboards ) ------------------------------------------------------------*/
@@ -160,19 +160,19 @@ code {
 /* tasks ------------------------------------------------------------*/
 
 .completed--sidebar {
-  @apply w-[317px] h-full bg-gray-0 border-l-2 border-gray-2 p-10 flex flex-col justify-between;
+  @apply fixed right-0 w-[317px] h-[95%] bg-gray-0 border-l-2 border-gray-2 p-10 flex flex-col justify-between;
 }
 
 .task--completed {
   @apply p-4 bg-[#413f45] my-5 w-full border-2 border-[#827f8a] rounded-lg flex justify-between;
 }
 
-.task--grid {
-  @apply grid gap-5;
+.tasks--grid {
+  @apply mt-5 grid gap-7 grid-cols-2;
 }
 
 .task--item {
-  @apply p-6 bg-gray-1 my-5 w-[350px] rounded-lg flex justify-between;
+  @apply p-6 bg-gray-1 w-[350px] rounded-lg flex justify-between;
 }
 
 .task--item-doing {
