@@ -85,7 +85,9 @@ const Dashboard = () => {
     },
   ])
   // determines the currently clicked board
-  const [activeBoard, setActiveBoard] = useState(taskBoards[0].id || '')
+  const [activeBoard, setActiveBoard] = useState(
+    taskBoards.length > 0 ? taskBoards[0].id : ''
+  )
 
   // determines the task selected for editing
   const [activeTask, setActiveTask] = useState('')
