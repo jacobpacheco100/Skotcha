@@ -65,12 +65,20 @@ const TaskItem = ({ task, title, description, doing }) => {
 
   return (
     <div className={doing ? 'task--item-doing' : 'task--item'}>
-      <div className='task--item-content'>
+      <div className='flex flex-col justify-center'>
         <h1 className='task--item-title'>{title}</h1>
-        <p className='task--item-description'>{description}</p>
+        {description && <p className='task--item-description'>{description}</p>}
       </div>
-      <div className='task--item-options'>
-        <input type='checkbox' className='checkbox' onClick={completeTask} />
+      <div
+        className={
+          description
+            ? 'flex flex-col justify-between items-end'
+            : 'flex flex-row-reverse items-center justify-between w-[60px]'
+        }
+      >
+        <div className='checkbox' onClick={completeTask}>
+          <BsCheckLg className='text-sm' />
+        </div>
 
         <div className='relative'>
           <FiMoreHorizontal

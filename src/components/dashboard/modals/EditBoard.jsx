@@ -2,6 +2,9 @@ import React, { useContext, useState } from 'react'
 import { Context } from '../context/Context'
 import { IoMdClose } from 'react-icons/io'
 
+// error
+import ErrorPopup from './ErrorPopup'
+
 const EditBoard = () => {
   const { setModal, taskBoards, setTaskBoards, activeBoard } =
     useContext(Context)
@@ -19,14 +22,19 @@ const EditBoard = () => {
   const [title, setTitle] = useState('')
 
   // on submit ( replaces board )
+  const [error, setError] = useState('')
   const editBoardName = (e) => {
     e.preventDefault()
-    const filterOld = taskBoards.filter((board) => board.id !== activeBoard)
-    setTaskBoards([
-      ...filterOld,
-      { id: activeBoard, subject: title, tasks: activeBoardTasks },
-    ])
-    setModal('')
+    if (title.length >= 1 && title.length <= 12) {
+      const filterOld = taskBoards.filter((board) => board.id !== activeBoard)
+      setTaskBoards([
+        ...filterOld,
+        { id: activeBoard, subject: title, tasks: activeBoardTasks },
+      ])
+      setModal('')
+    } else {
+      setError('Title must be between 1-12 characters')
+    }
   }
 
   return (
@@ -36,7 +44,7 @@ const EditBoard = () => {
         <h4 className='h2'>Edit Board Name</h4>
         <form onSubmit={editBoardName} className='mt-10 space-y-5'>
           <div>
-            <label className='label'>Title</label>
+            <label className='label'>Title ( max characters : 12 )</label>
             <input
               onChange={(e) => setTitle(e.target.value)}
               className='input'
@@ -46,6 +54,7 @@ const EditBoard = () => {
           <button className='btn-2 w-full'>Apply</button>
         </form>
       </div>
+      {error && <ErrorPopup message={error} />}
       <div onClick={() => setModal('')} className='modal--bg'></div>
     </>
   )

@@ -2,6 +2,9 @@ import React, { useContext, useState } from 'react'
 import { Context } from '../context/Context'
 import { IoMdClose } from 'react-icons/io'
 
+// error
+import ErrorPopup from './ErrorPopup'
+
 const AddTask = () => {
   const { setModal, setTaskBoards, taskBoards, activeBoard, setIsMore } =
     useContext(Context)
@@ -21,28 +24,36 @@ const AddTask = () => {
   }
 
   // on submit
+  const [error, setError] = useState('')
   const addTask = (e) => {
     e.preventDefault()
-    setTaskBoards(taskBoards.filter((board) => board.id !== activeBoard))
-    setTaskBoards((prev) => [
-      ...prev,
-      {
-        id: activeBoardID,
-        subject: activeBoardSubject,
-        tasks: [
-          {
-            id: Math.random(),
-            task: title,
-            description: description,
-            doing: false,
-            completed: false,
-          },
-          ...activeBoardTasks,
-        ],
-      },
-    ])
-    setModal('')
-    setIsMore(false)
+    if (title.length === 0 || title.length > 18) {
+      setError('Title must be between 1-18 characters')
+    } else if (description.length > 30) {
+      setError('Description cannot exceed 30 characters')
+    } else {
+      setTaskBoards(taskBoards.filter((board) => board.id !== activeBoard))
+      setTaskBoards((prev) => [
+        ...prev,
+        {
+          id: activeBoardID,
+          subject: activeBoardSubject,
+          tasks: [
+            {
+              id: Math.random(),
+              task: title,
+              description: description,
+              doing: false,
+              completed: false,
+            },
+            ...activeBoardTasks,
+          ],
+        },
+      ])
+      setModal('')
+      setIsMore(false)
+      setError(false)
+    }
   }
   return (
     <>
@@ -51,7 +62,7 @@ const AddTask = () => {
         <h4 className='h2'>+ New Task</h4>
         <form onSubmit={addTask} className='mt-10 space-y-5'>
           <div>
-            <label className='label'>Title</label>
+            <label className='label'>Title ( max characters : 18 )</label>
             <input
               onChange={(e) => setTitle(e.target.value)}
               className='input'
@@ -59,7 +70,7 @@ const AddTask = () => {
             />
           </div>
           <div>
-            <label className='label'>Title</label>
+            <label className='label'>Description ( optional )</label>
             <textarea
               onChange={(e) => setDescription(e.target.value)}
               className='input h-28'
@@ -69,6 +80,7 @@ const AddTask = () => {
           <button className='btn-2 w-full'>+ Add Task</button>
         </form>
       </div>
+      {error && <ErrorPopup message={error} />}
       <div onClick={() => setModal('')} className='modal--bg'></div>
     </>
   )

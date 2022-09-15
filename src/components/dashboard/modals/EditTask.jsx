@@ -2,6 +2,9 @@ import React, { useContext, useState } from 'react'
 import { Context } from '../context/Context'
 import { IoMdClose } from 'react-icons/io'
 
+// error
+import ErrorPopup from './ErrorPopup'
+
 const EditTask = () => {
   const {
     setModal,
@@ -34,26 +37,34 @@ const EditTask = () => {
   )
 
   // on submit ( replaces active board / tasks in active board )
+  const [error, setError] = useState('')
   const editTask = (e) => {
     e.preventDefault()
-    setTaskBoards([
-      {
-        id: activeBoard,
-        subject: activeBoardSubject,
-        tasks: [
-          {
-            id: activeTask,
-            task: title,
-            description: description,
-            doing: false,
-            completed: false,
-          },
-          ...filterOldTasks,
-        ],
-      },
-      ...filterOldBoards,
-    ])
-    setModal('')
+    if (title.length === 0 || title.length > 18) {
+      setError('Title must be between 1-18 characters')
+    } else if (description.length > 30) {
+      setError('Description cannot exceed 30 characters')
+    } else {
+      setTaskBoards([
+        {
+          id: activeBoard,
+          subject: activeBoardSubject,
+          tasks: [
+            {
+              id: activeTask,
+              task: title,
+              description: description,
+              doing: false,
+              completed: false,
+            },
+            ...filterOldTasks,
+          ],
+        },
+        ...filterOldBoards,
+      ])
+      setModal('')
+      setError(false)
+    }
   }
 
   const closeHandler = () => {
@@ -86,6 +97,7 @@ const EditTask = () => {
           <button className='btn-2 w-full'>Apply</button>
         </form>
       </div>
+      {error && <ErrorPopup message={error} />}
       {/* dark background */}
       <div onClick={closeHandler} className='modal--bg'></div>
     </>
