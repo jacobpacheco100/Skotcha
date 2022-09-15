@@ -35,64 +35,7 @@ const Dashboard = () => {
   // handles which modal is displayed
   const [modal, setModal] = useState()
   // state containing all boards and tasks within them
-  const [taskBoards, setTaskBoards] = useState([
-    {
-      id: Math.random(),
-      subject: 'school',
-      tasks: [
-        {
-          id: Math.random(),
-          task: 'Algebra',
-          description:
-            'finish pages 306, 307, 308 ( all even numbered questions )',
-          doing: false,
-          completed: false,
-        },
-        {
-          id: Math.random(),
-          task: 'English',
-          description: 'Turn in reading log',
-          doing: false,
-          completed: false,
-        },
-        {
-          id: Math.random(),
-          task: 'PE Homework',
-          description: 'Sign the sylabus and bring uniform',
-          doing: false,
-          completed: false,
-        },
-        {
-          id: Math.random(),
-          task: 'Biology Quiz',
-          description: 'Study for tomorrow bio quiz ( flash cards are online )',
-          doing: false,
-          completed: false,
-        },
-        {
-          id: Math.random(),
-          task: 'Shool supplies',
-          description: '',
-          doing: false,
-          completed: false,
-        },
-        {
-          id: Math.random(),
-          task: 'new schedual',
-          description: '',
-          doing: false,
-          completed: false,
-        },
-        {
-          id: Math.random(),
-          task: 'join an after club',
-          description: '',
-          doing: false,
-          completed: false,
-        },
-      ],
-    },
-  ])
+  const [taskBoards, setTaskBoards] = useState([])
   // determines the currently clicked board
   const [activeBoard, setActiveBoard] = useState(
     taskBoards.length > 0 ? taskBoards[0].id : ''
