@@ -35,11 +35,11 @@ const TopBar = () => {
             {isMore && <BoardMore />}
           </div>
         ) : (
-          <span className='empty-list'>no taskboards...</span>
+          <span className='empty-list'>No Task Boards...</span>
         )}
       </div>
       <button
-        className={`${activeBoard ? 'btn-abled' : 'btn-disabled'}`}
+        className={`${activeBoard ? 'btn-abled' : 'btn-disabled py-[7px]'}`}
         onClick={() => setModal('+task')}
       >
         + Add New Task

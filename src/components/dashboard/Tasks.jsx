@@ -4,7 +4,7 @@ import TaskItem from './smallComponents/TaskItem'
 import CompletedTask from './smallComponents/CompletedTask'
 
 const Tasks = () => {
-  const { activeBoard, taskBoards } = useContext(Context)
+  const { activeBoard, taskBoards, setModal } = useContext(Context)
 
   const activeBoardItem = taskBoards.filter((board) => board.id === activeBoard)
 
@@ -51,7 +51,13 @@ const Tasks = () => {
           </h3>
         </div>
         {/* map through board */}
-        <div className='tasks--grid'>{activeBoard && taskList}</div>
+        <div className='tasks--grid'>
+          {activeBoard && taskList.length > 0 ? (
+            taskList
+          ) : (
+            <p className='empty-list mt-5'>Nothing To Do...</p>
+          )}
+        </div>
       </div>
 
       {/* right : completed */}
@@ -66,7 +72,16 @@ const Tasks = () => {
           {/* map through board */}
           <div className=''>{activeBoard && completedTasks}</div>
         </div>
-        <button className='btn-2 w-full '>Finish Board !</button>
+
+        {activeBoard && completedTasks.length > 0 && taskList.length === 0 ? (
+          <button className='btn-2 w-full' onClick={() => setModal('-board')}>
+            Finish Board!
+          </button>
+        ) : (
+          <button className='btn-disabled w-full py-[10px]'>
+            Finish Board!
+          </button>
+        )}
       </div>
     </div>
   )

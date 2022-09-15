@@ -31,7 +31,7 @@ const SideBar = () => {
         {taskBoards.length > 0 ? (
           mapBoards
         ) : (
-          <li className='empty-list'>no tasks</li>
+          <li className='empty-list'>No Task Boards...</li>
         )}
       </ul>
       <button
