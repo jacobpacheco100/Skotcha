@@ -72,7 +72,7 @@ const TaskItem = ({ task, title, description, doing }) => {
       <div
         className={
           description
-            ? 'flex flex-col justify-between items-end'
+            ? 'flex flex-col justify-between items-end pl-2'
             : 'flex flex-row-reverse items-center justify-between w-[60px]'
         }
       >

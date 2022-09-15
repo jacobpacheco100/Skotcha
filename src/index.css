@@ -176,7 +176,7 @@ code {
 }
 
 .task--item-doing {
-  @apply p-6 bg-[#262035] border-2 border-secondary my-5 w-[350px] rounded-lg flex justify-between;
+  @apply p-6 bg-[#262035] ring-2 ring-secondary w-[350px] rounded-lg flex justify-between;
 }
 
 .task--item-options {

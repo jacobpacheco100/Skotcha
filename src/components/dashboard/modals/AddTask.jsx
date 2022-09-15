@@ -29,8 +29,8 @@ const AddTask = () => {
     e.preventDefault()
     if (title.length === 0 || title.length > 18) {
       setError('Title must be between 1-18 characters')
-    } else if (description.length > 30) {
-      setError('Description cannot exceed 30 characters')
+    } else if (description.length > 100) {
+      setError('Description cannot exceed 100 characters')
     } else {
       setTaskBoards(taskBoards.filter((board) => board.id !== activeBoard))
       setTaskBoards((prev) => [

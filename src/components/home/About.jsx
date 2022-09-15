@@ -1,10 +1,17 @@
 import React from 'react'
 import { useRef } from 'react'
 
+import emptyDashboard from '../../img/ss1.png'
+
 const About = ({ how }) => {
   return (
     <div className='container mt-52 flex flex-col items-center justify-center space-y-10 lg:flex-row lg:space-x-10 lg:space-y-0'>
-      <div className='h-[379px] w-full max-w-[492px] bg-gray-2 rounded-xl'></div>
+      <img
+        src={emptyDashboard}
+        alt=''
+        className='h-[379px] w-full max-w-[492px] bg-gray-2 rounded-xl ring-1 ring-gray-2'
+      />
+
       <article>
         <h3 className='h3'>About</h3>
         <h2 className='h2'>What is Skotcha?</h2>

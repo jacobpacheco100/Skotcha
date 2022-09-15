@@ -1,11 +1,20 @@
 import React from 'react'
 import { MdPersonOff } from 'react-icons/md'
 
+import dashboard from '../../img/ss2.png'
+import tasks from '../../img/ss3.png'
+import completed from '../../img/ss4.png'
+
 const How = () => {
   return (
     <>
       <div className='container mt-52 flex flex-col items-start justify-center space-y-10 md:space-y-20 '>
-        <div className='h-[379px] w-full  bg-gray-2 rounded-xl'></div>
+        <img
+          className='h-[379px] w-full rounded-xl ring-1 ring-gray-2'
+          src={dashboard}
+          alt=''
+        />
+
         <article className='flex justify-between w-full space-x-5'>
           <div className='text-center mx-auto  lg:text-left lg:mx-0'>
             <h3 className='h3'>How it Works</h3>
@@ -19,8 +28,15 @@ const How = () => {
             </p>
           </div>
           <div className='hidden lg:flex space-x-5 self-center'>
-            <div className='w-[221px] h-[212px] bg-gray-2 rounded-xl'></div>
-            <div className='w-[221px] h-[212px] bg-gray-2 rounded-xl'></div>
+            <img
+              src={tasks}
+              className='w-[221px] h-[212px] bg-gray-2 rounded-xl ring-1 ring-gray-2'
+            />
+
+            <img
+              src={completed}
+              className='w-[221px] h-[212px] bg-gray-2 rounded-xl ring-1 ring-gray-2'
+            />
           </div>
         </article>
       </div>
