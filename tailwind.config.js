@@ -8,6 +8,7 @@ module.exports = {
       danger: '#DA4C4C',
       white: '#fff',
       dark: '#18171B',
+      'gray-0': '#2e2d33',
       'gray-1': '#333138',
       'gray-2': '#48464E',
       'gray-3': '#9895A0',

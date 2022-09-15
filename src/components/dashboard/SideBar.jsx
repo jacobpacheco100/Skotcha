@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Context } from './context/Context'
 import BoardItem from './smallComponents/BoardItem'
+import { Link } from 'react-router-dom'
 
 const SideBar = () => {
   const { setModal, taskBoards } = useContext(Context)
@@ -18,9 +19,11 @@ const SideBar = () => {
 
   return (
     <div className='sidebar--container p-4 space-y-8 flex flex-col'>
-      <h1 className='logo'>skotcha</h1>
+      <Link to='/'>
+        <h1 className='logo'>skotcha</h1>
+      </Link>
       <h3 className='font-bold text-gray-4 '>
-        Tasks Boards ({taskBoards.length})
+        Tasks Boards ( {taskBoards.length} )
       </h3>
 
       {/* task boards list */}

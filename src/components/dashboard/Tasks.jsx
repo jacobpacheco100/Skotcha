@@ -56,12 +56,17 @@ const Tasks = () => {
 
       {/* right : completed */}
       <div className='completed--sidebar '>
-        <div className='flex items-center space-x-5'>
-          <div className='dot bg-primary'></div>
-          <h3 className='h4'>COMPLETED (0)</h3>
+        <div>
+          <div className='flex items-center space-x-5'>
+            <div className='dot bg-primary'></div>
+            <h3 className='h4'>
+              COMPLETED ( {activeBoard ? completedTasks.length : '0'} )
+            </h3>
+          </div>
+          {/* map through board */}
+          <div className=''>{activeBoard && completedTasks}</div>
         </div>
-        {/* map through board */}
-        <div className=''>{activeBoard && completedTasks}</div>
+        <button className='btn-2 w-full '>Finish Board !</button>
       </div>
     </div>
   )

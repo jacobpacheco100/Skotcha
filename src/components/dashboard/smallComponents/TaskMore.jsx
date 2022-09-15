@@ -14,8 +14,6 @@ const TaskMore = ({ task, setIsMore }) => {
     activeTask,
   } = useContext(Context)
 
-  console.log(task)
-
   setActiveTask(task.id)
   const handleEdit = () => {
     setModal('e-task')

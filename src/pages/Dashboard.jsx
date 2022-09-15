@@ -38,14 +38,14 @@ const Dashboard = () => {
   const [taskBoards, setTaskBoards] = useState([
     {
       id: Math.random(),
-      subject: 'reading log',
+      subject: 'The Gym',
       tasks: [
         {
           id: Math.random(),
-          task: 'read a book',
+          task: 'Drink Preworkout',
           description: 'Create a project folder in the Developer directory ',
           doing: false,
-          completed: true,
+          completed: false,
         },
         {
           id: Math.random(),
@@ -56,8 +56,8 @@ const Dashboard = () => {
         },
         {
           id: Math.random(),
-          task: 'exercise',
-          description: 'do 100 jumping jacks',
+          task: 'train',
+          description: 'do 50 pushups',
           doing: false,
           completed: false,
         },
