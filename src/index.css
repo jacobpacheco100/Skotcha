@@ -159,14 +159,20 @@ code {
 
 /* tasks ------------------------------------------------------------*/
 
+/* completed sidebar */
 .completed--sidebar {
-  @apply fixed right-0 w-[317px] h-[95%] bg-gray-0 border-l-2 border-gray-2 p-10 flex flex-col justify-between;
+  @apply fixed right-0 w-[317px] h-[95%] bg-gray-0 border-l-2 border-gray-2 p-10 flex flex-col justify-between  ease-in-out duration-200;
+}
+
+.hide-completed {
+  @apply translate-x-full fixed right-0 w-[317px] h-[95%] bg-gray-0 border-l-2 border-gray-2 p-10 flex flex-col justify-between ease-in-out duration-200;
 }
 
 .task--completed {
   @apply p-4 bg-[#413f45] my-5 w-full border-2 border-[#827f8a] rounded-lg flex justify-between;
 }
 
+/* = */
 .tasks--grid {
   @apply mt-5 grid gap-7 grid-cols-2;
 }

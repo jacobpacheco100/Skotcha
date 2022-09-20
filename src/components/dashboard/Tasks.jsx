@@ -3,9 +3,11 @@ import { Context } from './context/Context'
 import TaskItem from './smallComponents/TaskItem'
 import CompletedTask from './smallComponents/CompletedTask'
 
+// icons
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
+
 const Tasks = () => {
   const { activeBoard, taskBoards, setModal } = useContext(Context)
-
   const activeBoardItem = taskBoards.filter((board) => board.id === activeBoard)
 
   // filter/map out tasks
@@ -40,6 +42,9 @@ const Tasks = () => {
 
   console.log(completedTasks)
 
+  // show completed tasks ( state )
+  const [isCompleted, setIsCompleted] = useState(false)
+
   return (
     <div className='tasks--container  flex'>
       {/* left : todo list */}
@@ -61,7 +66,15 @@ const Tasks = () => {
       </div>
 
       {/* right : completed */}
-      <div className='completed--sidebar '>
+      <div
+        className={`  ${isCompleted ? 'completed--sidebar' : 'hide-completed'}`}
+      >
+        <button
+          className='absolute left-[-50px] p-2 rounded-lg bg-gray-2 text-2xl ease-in-out duration-150 hover:bg-secondary'
+          onClick={() => setIsCompleted((prev) => !prev)}
+        >
+          {isCompleted ? <BiChevronRight /> : <BiChevronLeft />}
+        </button>
         <div>
           <div className='flex items-center space-x-5'>
             <div className='dot bg-primary'></div>
@@ -69,7 +82,7 @@ const Tasks = () => {
               COMPLETED ( {activeBoard ? completedTasks.length : '0'} )
             </h3>
           </div>
-          {/* map completed tasks board */}
+          {/* map completed tasks */}
           <div className=''>{activeBoard && completedTasks}</div>
         </div>
 

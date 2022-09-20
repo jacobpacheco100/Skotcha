@@ -15,6 +15,9 @@ import EditTask from '../components/dashboard/modals/EditTask'
 // context api
 import { Context } from '../components/dashboard/context/Context'
 
+// icon
+import { BsGear } from 'react-icons/bs'
+
 const Dashboard = () => {
   // on button clicks, modal will equal a string corosponding to that button ( + Add Board = +board)
   const showModal = () => {
@@ -46,6 +49,15 @@ const Dashboard = () => {
 
   return (
     <main className='dashboard--container'>
+      {/* hide if mobile */}
+      <div className='h-screen w-screen bg-gray-1 fixed z-40 flex items-center'>
+        <div className='w-[80%] max-w-[300px] text-center mx-auto flex flex-col justify-center items-center space-y-5'>
+          <BsGear className='text-7xl' />
+          <p className='h4'>
+            Sorry! Taskboard on mobile devices is still in development
+          </p>
+        </div>
+      </div>
       {/* context api */}
       <Context.Provider
         value={{
