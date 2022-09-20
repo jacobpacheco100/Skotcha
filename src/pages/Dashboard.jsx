@@ -50,7 +50,7 @@ const Dashboard = () => {
   return (
     <main className='dashboard--container'>
       {/* hide if mobile */}
-      <div className='h-screen w-screen bg-gray-1 fixed z-40 flex items-center'>
+      <div className='h-screen w-screen bg-gray-1 fixed z-40 flex items-center sm:hidden'>
         <div className='w-[80%] max-w-[300px] text-center mx-auto flex flex-col justify-center items-center space-y-5'>
           <BsGear className='text-7xl' />
           <p className='h4'>
