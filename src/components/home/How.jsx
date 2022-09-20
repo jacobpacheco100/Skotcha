@@ -8,9 +8,9 @@ import completed from '../../img/ss4.png'
 const How = () => {
   return (
     <>
-      <div className='container mt-52 flex flex-col items-start justify-center space-y-10 md:space-y-20 '>
+      <div className='container mt-52 flex flex-col items-start justify-center space-y-20 '>
         <img
-          className='h-[379px] w-full rounded-xl ring-1 ring-gray-2'
+          className='h-[379px] w-full rounded-xl ring-1 ring-gray-2 object-cover object-left'
           src={dashboard}
           alt=''
         />
@@ -41,7 +41,7 @@ const How = () => {
         </article>
       </div>
       {/* steps */}
-      <section className='container mt-20 lg:mt-32 mb-52 flex flex-col lg:flex-row items-center justify-center space-y-8 lg:space-y-0 lg:space-x-5'>
+      <section className='container mt-10 mb-20 flex flex-col lg:flex-row items-center justify-center space-y-8 lg:mt-20 lg:space-y-0 lg:space-x-5'>
         <span className='btn-1 lg:w-auto'>Create Board</span>
         <span className='btn-1 lg:w-auto'>+ Add Task</span>
         <span className='btn-1 lg:w-auto'>Mark Complete</span>
@@ -49,7 +49,7 @@ const How = () => {
       </section>
       {/* no user login */}
       <section className='container text-center'>
-        <div className='text-6xl text-primary p-10 bg-gray-1 inline-block rounded-full'>
+        <div className='text-6xl text-primary p-10 bg-gray-1 inline-block rounded-full mt-20'>
           <MdPersonOff />
         </div>
         <h3 className='h3 mt-10'>Quick and Easy</h3>

@@ -9,7 +9,7 @@ const About = ({ how }) => {
       <img
         src={emptyDashboard}
         alt=''
-        className='h-[379px] w-full max-w-[492px] bg-gray-2 rounded-xl ring-1 ring-gray-2'
+        className='h-[379px] w-full max-w-[492px] bg-gray-2 rounded-xl ring-1 ring-gray-2 object-cover object-left'
       />
 
       <article>
