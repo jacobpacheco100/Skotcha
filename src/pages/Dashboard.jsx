@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 // main components
 import SideBar from '../components/dashboard/SideBar'
@@ -35,17 +35,28 @@ const Dashboard = () => {
       return null
     }
   }
+
+  // state containing all boards and tasks within them
+  const [taskBoards, setTaskBoards] = useState(
+    JSON.parse(window.localStorage.getItem('taskBoards')) || []
+  )
   // handles which modal is displayed
   const [modal, setModal] = useState()
-  // state containing all boards and tasks within them
-  const [taskBoards, setTaskBoards] = useState([])
   // determines the currently clicked board
   const [activeBoard, setActiveBoard] = useState(
     taskBoards.length > 0 ? taskBoards[0].id : ''
   )
-
   // determines the task selected for editing
   const [activeTask, setActiveTask] = useState('')
+
+  useEffect(() => {
+    const data = window.localStorage.getItem('taskBoards')
+    if (data !== null) setTaskBoards(JSON.parse(data))
+  }, [])
+
+  useEffect(() => {
+    window.localStorage.setItem('taskBoards', JSON.stringify(taskBoards))
+  }, [taskBoards])
 
   return (
     <main className='dashboard--container'>
